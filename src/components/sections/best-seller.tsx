@@ -27,7 +27,7 @@ export function BestSeller() {
           </div>
 
           {/* Products */}
-          <div className="flex-1">
+          <div className="flex-1 overflow-hidden">
             <ProductCarousel products={products} />
           </div>
         </div>

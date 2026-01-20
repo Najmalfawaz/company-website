@@ -1,6 +1,6 @@
 "use client";
 
-import { TopHeader, MainHeader, Footer } from "@/components/layout";
+import { MainHeader, Footer } from "@/components/layout";
 import {
   HeroBanner,
   CategoryIcons,
@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header */}
-      <TopHeader />
+      {/* <TopHeader /> */}
       <MainHeader />
 
       {/* Main Content */}

@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Noto_Sans_Arabic } from "next/font/google";
 import "./globals.css";
 import { LocaleProvider } from "@/lib/i18n/locale-context";
+import { CartProvider } from "@/lib/cart-context";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -53,7 +54,9 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${notoSansArabic.variable} antialiased`}
       >
-        <LocaleProvider>{children}</LocaleProvider>
+        <LocaleProvider>
+          <CartProvider>{children}</CartProvider>
+        </LocaleProvider>
       </body>
     </html>
   );

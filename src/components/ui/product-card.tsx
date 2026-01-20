@@ -1,10 +1,11 @@
-"use client";
+'use client';
 
-import { useLocale } from "@/lib/i18n/locale-context";
-import { formatPrice } from "@/lib/utils";
-import type { Product } from "@/lib/data/products";
-import { Heart, Eye, BarChart3, ShoppingCart } from "lucide-react";
-import { useState } from "react";
+import { useLocale } from '@/lib/i18n/locale-context';
+import { formatPrice } from '@/lib/utils';
+import type { Product } from '@/lib/data/products';
+import { Heart, Eye, BarChart3, ShoppingCart } from 'lucide-react';
+import { useState } from 'react';
+import { useCart } from '@/lib/cart-context';
 
 interface ProductCardProps {
   product: Product;
@@ -12,13 +13,14 @@ interface ProductCardProps {
 
 export function ProductCard({ product }: ProductCardProps) {
   const { locale, dictionary } = useLocale();
+  const { addToCart } = useCart();
   const [isHovered, setIsHovered] = useState(false);
   const t = dictionary;
 
   const badgeColors = {
-    new: "bg-green-500",
-    sale: "bg-[#ea580c]",
-    hot: "bg-red-500",
+    new: 'bg-green-500',
+    sale: 'bg-[#ea580c]',
+    hot: 'bg-red-500',
   };
 
   return (
@@ -53,7 +55,7 @@ export function ProductCard({ product }: ProductCardProps) {
         {/* Quick Actions */}
         <div
           className={`absolute inset-0 bg-black/20 flex items-center justify-center gap-2 transition-opacity duration-300 ${
-            isHovered ? "opacity-100" : "opacity-0"
+            isHovered ? 'opacity-100' : 'opacity-0'
           }`}
         >
           <button
@@ -93,16 +95,19 @@ export function ProductCard({ product }: ProductCardProps) {
         <div className="mb-3">
           {product.originalPrice > product.price && (
             <p className="text-xs text-gray-400 line-through">
-              {formatPrice(product.originalPrice, t.common.currency)}
+              {formatPrice(product.originalPrice, t.common.currency, locale)}
             </p>
           )}
           <p className="text-[#ea580c] font-bold">
-            {formatPrice(product.price, t.common.currency)}
+            {formatPrice(product.price, t.common.currency, locale)}
           </p>
         </div>
 
         {/* Add to Cart Button */}
-        <button className="w-full flex items-center justify-center gap-2 py-2.5 border-2 border-[#0891b2] text-[#0891b2] rounded-lg hover:bg-[#0891b2] hover:text-white transition-colors font-medium text-sm">
+        <button
+          onClick={() => addToCart(product)}
+          className="w-full flex items-center justify-center gap-2 py-2.5 border-2 border-[#0891b2] text-[#0891b2] rounded-lg hover:bg-[#0891b2] hover:text-white transition-colors font-medium text-sm"
+        >
           <ShoppingCart className="w-4 h-4" />
           <span>{t.common.addToCart}</span>
         </button>

@@ -6,7 +6,7 @@ export const ar: Dictionary = {
     viewAll: "عرض الكل",
     search: "ابحث عن المنتجات والفئات والعلامات التجارية",
     allCategories: "جميع الفئات",
-    currency: "درهم",
+    currency: "AED",
     wishlist: "قائمة الرغبات",
     cart: "السلة",
     login: "تسجيل الدخول",

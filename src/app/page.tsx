@@ -1,27 +1,24 @@
-"use client";
+'use client';
 
 import { MainHeader, Footer } from "@/components/layout";
-import {
-  HeroBanner,
-  CategoryIcons,
-  FeaturedBrands,
-  ProductSection,
-  TopDeals,
-  BestSeller,
-  ShopByBrand,
-  AboutSection,
-  Testimonials,
-  Features,
-} from "@/components/sections";
+import { AboutSection } from "@/components/pages/home/about-section";
+import { BestSeller } from "@/components/pages/home/best-seller";
+import { CategoryIcons } from "@/components/pages/home/category-icons";
+import { FeaturedBrands } from "@/components/pages/home/featured-brands";
+import { Features } from "@/components/pages/home/features";
+import { HeroBanner } from "@/components/pages/home/hero-banner";
+import { ProductSection } from "@/components/pages/home/product-section";
+import { ShopByBrand } from "@/components/pages/home/shop-by-brand";
+import { Testimonials } from "@/components/pages/home/testimonials";
+import { TopDeals } from "@/components/pages/home/top-deals";
 import { useLocale } from "@/lib/i18n/locale-context";
 
 export default function Home() {
   const { dictionary } = useLocale();
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-white">
       {/* Header */}
-      {/* <TopHeader /> */}
       <MainHeader />
 
       {/* Main Content */}

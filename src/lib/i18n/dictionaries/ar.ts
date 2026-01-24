@@ -138,4 +138,4 @@ export const ar: Dictionary = {
     address: "شارع صلاح الدين، دبي",
     messageWhatsApp: "راسلنا على واتساب",
   },
-} as const;
+};

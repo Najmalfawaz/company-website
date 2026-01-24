@@ -136,6 +136,6 @@ export const en = {
     address: "Salah Al Din St, Dubai",
     messageWhatsApp: "Message us on WhatsApp",
   },
-} as const;
+};
 
 export type Dictionary = typeof en;

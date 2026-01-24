@@ -54,21 +54,21 @@ export function CategoryIcons() {
   const NextIcon = direction === "rtl" ? ChevronLeft : ChevronRight;
 
   return (
-    <section className="py-8 bg-white">
+    <section className="py-8 bg-[#e0f7ff]">
       <div className="container mx-auto px-4">
         <div className="relative">
           {/* Scroll Left Button */}
           <button
             onClick={() => scroll("left")}
-            className="absolute start-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white shadow-lg rounded-full flex items-center justify-center hover:bg-gray-50 transition-colors"
+            className="absolute start-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/80 shadow-lg rounded-full flex items-center justify-center hover:bg-white transition-colors"
           >
-            <PrevIcon className="w-5 h-5 text-gray-600" />
+            <PrevIcon className="w-6 h-6 text-gray-700" />
           </button>
 
           {/* Categories */}
           <div
             ref={scrollRef}
-            className="flex gap-4 md:gap-6 overflow-x-auto hide-scrollbar px-12 py-4"
+            className="flex gap-4 md:gap-6 overflow-x-auto hide-scrollbar px-16 py-4"
           >
             {categories.map((category) => {
               const IconComponent = iconMap[category.icon] || Wrench;
@@ -76,12 +76,12 @@ export function CategoryIcons() {
                 <a
                   key={category.id}
                   href={`/category/${category.id}`}
-                  className="flex flex-col items-center gap-2 min-w-[80px] md:min-w-[100px] group"
+                  className="flex flex-col items-center gap-3 min-w-[90px] md:min-w-[110px] group"
                 >
-                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-gray-100 flex items-center justify-center group-hover:bg-[#0891b2] group-hover:text-white transition-colors">
-                    <IconComponent className="w-7 h-7 md:w-8 md:h-8" />
+                  <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-white shadow-md flex items-center justify-center group-hover:bg-[#0891b2] group-hover:text-white transition-all duration-300 transform group-hover:scale-105">
+                    <IconComponent className="w-8 h-8 md:w-10 md:h-10 text-cyan-700 group-hover:text-white transition-colors" />
                   </div>
-                  <span className="text-xs md:text-sm text-center text-gray-700 group-hover:text-[#0891b2] transition-colors line-clamp-2">
+                  <span className="text-sm md:text-base text-center text-gray-800 group-hover:text-[#0891b2] transition-colors font-medium line-clamp-2">
                     {category.name[locale]}
                   </span>
                 </a>
@@ -92,9 +92,9 @@ export function CategoryIcons() {
           {/* Scroll Right Button */}
           <button
             onClick={() => scroll("right")}
-            className="absolute end-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white shadow-lg rounded-full flex items-center justify-center hover:bg-gray-50 transition-colors"
+            className="absolute end-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/80 shadow-lg rounded-full flex items-center justify-center hover:bg-white transition-colors"
           >
-            <NextIcon className="w-5 h-5 text-gray-600" />
+            <NextIcon className="w-6 h-6 text-gray-700" />
           </button>
         </div>
       </div>

@@ -1,0 +1,10 @@
+// export { HeroBanner } from "./hero-banner";
+// export { CategoryIcons } from "./category-icons";
+// export { FeaturedBrands } from "./featured-brands";
+// export { SectionHeader } from "./section-header";
+// export { ProductSection } from "./product-section";
+// export { TopDeals } from "./top-deals";
+// export { BestSeller } from "./best-seller";
+// export { ShopByBrand } from "./shop-by-brand";
+// export { AboutSection } from "./about-section";
+// export { Features } from "./features";
